@@ -1,0 +1,45 @@
+.main-content {
+    display: flex;
+    color: rgb(41, 41, 41);
+    background-color: none;/*rgb(0, 39, 65);*/
+    height: 4em;
+    align-items: center;
+    justify-content: center;
+}
+
+.body {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    padding-left: 3em;
+}
+
+.right {
+    background-color: none;
+    height: 100%;
+    width: 20%;
+    display: flex;
+}
+
+.btn-search {
+    background-color: transparent !important;
+    color: rgb(41, 41, 41);
+    border: 1px solid rgb(41, 41, 41) !important;
+    height: 40px;
+}
+
+.search {
+    margin-left: 3em;
+    border: none;
+    border-bottom: 1px solid rgb(41, 41, 41) !important;
+    color: rgb(41, 41, 41);
+    background-color: transparent !important;
+    height: 40px;
+    width: 25em;
+    outline:0px !important;
+}
+
+.text {
+    
+}
