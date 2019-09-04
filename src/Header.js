@@ -16,7 +16,7 @@ class Header extends Component {
       <div className="navBar">
         {this.state.renderRedirect}
         <Navbar className="navBar">
-          <Navbar.Brand href="#home">Travel Mem</Navbar.Brand>
+          <Navbar.Brand href="#home">Travel Memories</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="body">

@@ -8,7 +8,7 @@ class TravelmemoriesText extends Component {
     return (
         <div className="travelMemo1">
             TRAVEL
-            <div className="travelMemo2">MEMORIES <span className="travelBeta">beta</span></div>
+            <div className="travelMemo2">MEMO <span className="travelBeta">beta</span></div>
         </div>     
     )
   }
