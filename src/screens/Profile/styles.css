@@ -1,46 +1,3 @@
-.navBar {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 90px;
-}
-
-.navHeader {
-    display: flex;
-    width: 20%;
-    height: 100%;
-    align-items: center;
-}
-
-.navBody {
-    display: flex;
-    width: 60%;
-    height: 100%;
-    align-items: flex-end;
-    justify-content: center;
-}
-
-.navFooter {
-    display: flex;
-    width: 20%;
-    height: 100%;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.searchPadding {
-    padding-bottom: 20px;
-}
-
-.travelMemo1 {
-    font-size: 21px;
-}
-
-.travelMemo2 {
-    font-size: 21px;
-    color: white;
-}
-
 .profilPicture {
     width: 60px;
     height: 60px;
@@ -53,99 +10,6 @@
     padding-right: 20px;
 }
 
-.modal-content {
-    background-image: url("../../css/img/BACKGROUND_MAPS.png");
-    border-radius: 0.7rem !important;
-}
-
-.modal-header{
-    padding-top: 1rem !important;
-    border-bottom: none !important;
-}
-
-.modal-footer{
-    border-top: none !important;
-    padding-bottom: 1rem;
-    padding-right: 1rem;
-    padding-top: 0.1rem;
-}
-
-.loader{
-  position: absolute;
-  left: 45%;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  text-align: center;
-}
-
-.example-enter {
-    opacity: 0.01;
-  }
-  
-  .example-enter.example-enter-active {
-    opacity: 1;
-    transition: opacity 500ms ease-in;
-  }
-  
-  .example-leave {
-    opacity: 1;
-  }
-  
-  .example-leave.example-leave-active {
-    opacity: 0.01;
-    transition: opacity 300ms ease-in;
-  }
-
-  .dropdown-toggle{
-      background-color: transparent !important;
-      border: none !important;
-  }
-
-  .dropdown-toggle::after{
-      border: none !important;
-  }
-
-  /*.dropdown-menu{
-      background-color: transparent !important;
-  }
-
-  .dropdown-item{
-      //color: white;
-  }*/
-
-  .dropdown-menu{
-      text-align: center;
-      background-color: rgba(244, 241, 236)
-  }
-
-  .dropdownProfilName{
-      font-weight: bold;
-      margin-top: 10%;
-      color: black;
-  }
-
-  .dropdownProfilStatus{
-      font-style: italic;
-      color: black;
-  }
-
-  .dropdownPicture{
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-  }
-
-  .dropdown-header{
-    margin-bottom: 10%;
-    background-color: rgba(224, 200, 161, 0.8);
-    margin-top: -4%
-  }
-
-  .dropdown-item:focus, .dropdown-item:hover {
-      background-color: rgba(224, 200, 161, 0.8) !important;
-  }
-
   .profile{
     background-image: url('../../css/img/BACKGROUND_MAPS.png');
   }
@@ -153,13 +17,6 @@
   .profil-image{
     border-radius: 70%;
     margin-left: 10%;
-  }
-
-  .banner{
-    padding-top: 2%;
-    padding-bottom: 1%;
-    display: flex;
-    align-items: center;
   }
 
   .userInfos{
@@ -173,34 +30,21 @@
      color: white;
   }
 
-  .mapView {
-    box-sizing: content-box;
-  }
-
-  svg{
-      box-sizing: content-box;
-  }
-
-  .zoom{
-      box-sizing: content-box;
-  }
-
-  .wrapperStyles{
-      box-sizing: content-box;
-  }
-
   .worldmap{
-      box-sizing: content-box;
+      width: 50%;
   }
 
-  .zoomButtons{
-      box-sizing: content-box;
+  .genBanner{
+      background-image: url('../../css/img/airfrance_4.jpg');
+      background-size: cover;
   }
 
-  span{
-      box-sizing: content-box;
+  .profileContent{
+      background-color: rgba(0,0,0);
   }
 
-  div{
-      box-sizing: content-box;
+  .photos{
+      width: 50%;
+      padding-top: 20px;
+      background-color: rgba(0,0,0);
   }

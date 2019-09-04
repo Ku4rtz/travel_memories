@@ -1,9 +1,11 @@
-import React, { Component } from "react"
+import React, { Component, useState, useCallback } from "react"
 import Header from '../Header'
 import ModalCountry from '../ModalCountry'
 import './styles.css'
 import WorldMap from './WorldMap'
 import { Redirect } from 'react-router-dom'
+import Gallerie from './Gallerie.js'
+import Gallery from 'react-photo-gallery'
 
 class Profile extends Component {
     constructor(props){
@@ -22,10 +24,7 @@ class Profile extends Component {
 
         this.getDataFromSearchBar = this.getDataFromSearchBar.bind(this);
         this.goToMap = this.goToMap.bind(this);
-    
-    }
-
-    componentDidMount(){
+        
     }
 
     getDataFromSearchBar(data, alpha3){
@@ -42,11 +41,27 @@ class Profile extends Component {
             redirection: <Redirect to='/' />
         })
     }
+    
 
     render() {
+
+        
+  const photos = [
+    {
+        src: 'profileImg/chine3.jpg',
+    },
+    {
+        src: 'profileImg/chine4.jpg',
+    },
+    {
+        src: 'profileImg/chine8.jpg',
+    },
+];
+
         return (
             <div className="profile">
                 {this.state.redirection}
+                <div class="genBanner">
                 <Header openModal={this.getDataFromSearchBar} />
                 <ModalCountry ref={this._child} modalTitle={this.state.modalTitle} alpha3={this.state.alpha3} />
                 <div className="header">
@@ -58,12 +73,13 @@ class Profile extends Component {
                         </div>
                     </div>
                 </div>
+                </div>
 
-                <div className="content col-md-12">
-                    <div className="col-md-6">
-                        
+                <div className="profileContent row">
+                    <div className="photos">
+                        <Gallery photos={photos} />
                     </div>
-                    <div className="col-md-6 pull-right worldmap">
+                    <div className="worldmap">
                         <WorldMap thisUser={this.state.thisUser} redirect={this.goToMap} />
                     </div>
                 </div>
