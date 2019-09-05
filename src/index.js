@@ -22,8 +22,7 @@ const Root = () => {
                 <Route exact path='/' component={Security(App)} />
                 <Route exact path='/connexion' component={Connexion} />
                 <Route exact path='/test' component={Test} />
-                <Route exact path='/profile' component={Profile} />
-                <Route exact path='/map' component={WorldMap} />
+                <Route exact path='/profile' component={Security(Profile)} />
             </Switch>
         </Router>
     )

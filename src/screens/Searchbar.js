@@ -97,7 +97,7 @@ class Searchbar extends React.Component {
     return (
       <Select
         classNamePrefix="react-select"
-        placeholder={"Search..."}
+        placeholder={"Rechercher..."}
         onChange={this.handleChange}
         components={{ DropdownIndicator: () => null, Option: IconOption }}
         options={this.state.options}
