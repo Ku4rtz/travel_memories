@@ -6,45 +6,68 @@
 
 .profilName {
     font-size: 18px;
-    color:rgba(255, 255, 255, 0.8);;
+    color:rgba(255, 255, 255, 0.8);
     padding-right: 20px;
 }
 
   .profile{
-    background-image: url('../../css/img/BACKGROUND_MAPS.png');
+    background-color: #fafafa;
   }
 
   .profil-image{
+    width: 150px;
+    height: 150px;
     border-radius: 70%;
     margin-left: 10%;
   }
 
   .userInfos{
     font-family: 'Vidaloka', serif;
-    font-size: 4em;
+    font-size: 3em;
     font-weight: bold;
   }
 
   .userStatus{
      font-style: italic;
-     color: white;
+     color: grey;
   }
 
   .worldmap{
       width: 50%;
+      padding-right: 20px;
   }
 
   .genBanner{
-      background-image: url('../../css/img/airfrance_4.jpg');
       background-size: cover;
-  }
-
-  .profileContent{
-      background-color: rgba(0,0,0);
   }
 
   .photos{
       width: 50%;
-      padding-top: 20px;
-      background-color: rgba(0,0,0);
+      height: 980px;
+      overflow-y: scroll;
+      direction: rtl;
+  }
+
+  .profileContent{
+    padding-top: 10px;
+  }
+
+  .photoList{
+    color: white;
+    cursor: pointer;
+    width: 33%;
+    padding: 2px;
+    height: 20%;
+  }
+
+  .profileHeader{
+    background-color: white;
+    padding-bottom: 10px;
+    -webkit-box-shadow: 0 3px 6px -6px grey;
+	   -moz-box-shadow: 0 3px 6px -6px grey;
+	        box-shadow: 0 3px 6px -6px grey;
+  }
+
+  .header{
+    padding-top: 10px;
   }

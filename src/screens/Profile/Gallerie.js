@@ -1,51 +1,30 @@
-import React, { Component, useCallback } from "react";
-import Gallery from "react-photo-gallery";
-import Carousel, { Modal, ModalGateway } from "react-images";
+import React, { Component } from 'react';
+import ReactBnbGallery from 'react-bnb-gallery';
 
-class Gallerie extends Component {
+class Gallery extends Component {
+  constructor() {
+    super(...arguments);
+  }
 
-  constructor(props){
-    super(props)
-
-    this.state = {
-      currentImage: 0,
-      setCurrentImage: 0,
-      viewerIsOpen: false,
-      setViewerIsOpen: false,
-    }   
-}
-
-  render(){
-    const openLightbox = useCallback((event, { photo, index }) => {
-      this.state.setCurrentImage(index);
-      this.state.setViewerIsOpen(true);
-    }, []);
-  
-    const closeLightbox = () => {
-      this.state.setCurrentImage(0);
-      this.state.setViewerIsOpen(false);
-    };
-
+  render () {
+    console.log(this.props.activePhotoIndex)
     return (
       <div>
-        <Gallery photos={this.props.photos} onClick={openLightbox} />
-        <ModalGateway>
-          {this.state.viewerIsOpen ? (
-            <Modal onClose={closeLightbox}>
-              <Carousel
-                currentIndex={this.state.currentImage}
-                views={this.props.photos.map(x => ({
-                  ...x,
-                  srcset: x.srcSet,
-                  caption: x.title
-                }))}
-              />
-            </Modal>
-          ) : null}
-        </ModalGateway>
+      <ReactBnbGallery
+        show={this.props.galleryIsVisible}
+        photos={this.props.photos}
+        onClose={this.props.close}
+        activePhotoIndex={this.props.activePhotoIndex}
+        opacity={0.80}
+        // phrases={
+        //   noPhotosProvided: "Aucune photo"
+        //   showPhotoList: "Montrer la liste"
+        //   hidePhotoList: "Cacher la liste"
+        // }
+      />
       </div>
-    );
+    )
   }
 }
 
-export default Gallerie;
+export default Gallery

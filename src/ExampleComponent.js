@@ -1,31 +1,23 @@
 import React, { Component } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha'
+import Gallery from './screens/Profile/Gallerie'
 
 class ExampleComponent extends Component {   
-    constructor(){
-      super()
-  
-      this.state = {
-        recaptchaResponse : ''
-      }
-
-      this.handleCaptchaResponseChange = this.handleCaptchaResponseChange.bind(this);    
-    }
-
-  handleCaptchaResponseChange(response) {
-    this.setState({
-      recaptchaResponse: response,
-    }, () => console.log(this.state.recaptchaResponse));
-  }
-
   render() {
+    const photos = [
+      {
+          photo: 'profileImg/chine3.jpg',
+          thumbnail: 'profileImg/chine3.jpg'
+      },
+      {
+          photo: 'profileImg/chine4.jpg',
+      },
+      {
+          photo: 'profileImg/chine8.jpg',
+      },
+  ];
     return (
-      <ReCAPTCHA
-        className="captcha"
-        ref="recaptcha"
-        sitekey="6LcyQ6gUAAAAAJ5KmJhaXrOefFKYNwVt2H4i6Ooj"
-        onChange={this.handleCaptchaResponseChange}
-       />
+      <Gallery photos={photos}></Gallery>
     );
   };
 };

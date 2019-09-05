@@ -10,7 +10,7 @@ import {
 import App from './App';
 import Connexion from './screens/Connexion/index.js';
 import * as serviceWorker from './serviceWorker';
-import Test from './Test';
+import Test from './ExampleComponent';
 import Profile from './screens/Profile/Profile.js';
 import Security from './Security';
 import WorldMap from './screens/Profile/WorldMap';
