@@ -1,4 +1,4 @@
-import React, { Component, useState, useCallback } from "react"
+import React, { Component } from "react"
 import Header from '../Header'
 import ModalCountry from '../ModalCountry'
 import './styles.css'

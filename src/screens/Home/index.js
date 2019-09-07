@@ -48,7 +48,7 @@ class WorldMap extends Component {
   componentWillMount(){
     setTimeout(() => {
       ReactTooltip.rebuild()
-    }, 1)  
+    }, 1)
   }
 
   componentDidMount() {
@@ -113,7 +113,7 @@ class WorldMap extends Component {
         })
         .catch(err => {
           console.log("Erreur de chargement de l'API")
-        })      
+        })
   }
 
   handleZoomOut(){

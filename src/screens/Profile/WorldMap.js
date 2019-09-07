@@ -27,7 +27,7 @@ class ProfileWorldMap extends React.Component {
   componentWillMount(){
     setTimeout(() => {
       ReactTooltip.rebuild()
-    }, 1)  
+    }, 1)
   }
 
   componentDidMount() {

@@ -180,3 +180,7 @@
   .navBar{
       padding-left: 5px;
   }
+
+  .visitedButton{
+      background-color: green;
+  }

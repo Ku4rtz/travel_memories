@@ -13,6 +13,7 @@ import * as serviceWorker from './serviceWorker';
 import Test from './ExampleComponent';
 import Profile from './screens/Profile/Profile.js';
 import Security from './Security';
+import Photos from './screens/Photos/Photos.js';
 import WorldMap from './screens/Profile/WorldMap';
 
 const Root = () => {
@@ -23,6 +24,7 @@ const Root = () => {
                 <Route exact path='/connexion' component={Connexion} />
                 <Route exact path='/test' component={Test} />
                 <Route exact path='/profile' component={Profile} />
+                <Route exact path='/photos' component={Photos} />
             </Switch>
         </Router>
     )

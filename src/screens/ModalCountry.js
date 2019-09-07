@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import { Modal, Button } from 'react-bootstrap'
 import Config from '../Config'
+import './styles.css'
+import { Redirect } from 'react-router-dom'
 
 class ModalCountry extends React.Component{
   constructor(props) {
@@ -11,7 +13,9 @@ class ModalCountry extends React.Component{
     this.open = this.open.bind(this)
 
     this.state = {
-      showModal: false
+      showModal: false,
+      redirection: "",
+      lookedCountry: ""
     }
   }
 
@@ -35,6 +39,27 @@ class ModalCountry extends React.Component{
   open(){
     this.setState({ 
       showModal: true 
+    })
+  }
+
+  goToPhotos(){
+    let self = this;
+    if(this.props.countries)
+    {
+      this.props.countries.objects.units.geometries.forEach(function(country){
+        if(country.id === self.props.alpha3)
+        {
+          country.properties.focused = false;
+        }
+      })
+    }
+    this.setState({
+        redirection: <Redirect exact from="/" to={{
+          pathname: '/photos',
+          state: { 
+            lookedCountry: this.props.alpha3
+          }
+      }} />
     })
   }
 
@@ -72,6 +97,7 @@ class ModalCountry extends React.Component{
   render(){
     return(
       <div>
+        {this.state.redirection}
         <Modal 
           size="lg"
           aria-labelledby="contained-modal-title-vcenter"
@@ -91,7 +117,8 @@ class ModalCountry extends React.Component{
             </p>
            </Modal.Body>
            <Modal.Footer>
-            <Button onClick={() => this.visited()}>Visité</Button>
+            <Button className="visitedButton pull-left" onClick={() => this.visited()}>Visité</Button>
+            <Button onClick={() => this.goToPhotos()}>Photos</Button>
            </Modal.Footer>
         </Modal>
       </div>
