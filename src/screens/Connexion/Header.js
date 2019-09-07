@@ -83,7 +83,6 @@ class Header extends Component {
       <div>
         {this.state.renderRedirect}
         <Navbar collapseOnSelect expand="lg" variant="dark">
-          <Navbar.Brand href="#home">Travel Memories</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">

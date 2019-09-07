@@ -223,13 +223,17 @@ class Connexion extends Component {
     render() {
         return (
             <div className="mainContainer">
-                <Header />
-                <div className="leftContainer">
-                    <div className="leftHeader"> 
+                <div className="connexionHeader">
+                    <div className="logoText">
                         <TravelmemoriesText />
                     </div>
-                    <div className="leftBody">
-                        <div className="Title">
+                    <div className="connexionInputs">
+                        <Header />
+                    </div>
+                </div>
+                <div className="mainContent">
+                    <div className="leftContent">
+                        <div className="fullTitle">
                             <div>
                                 <div id="title" className="text-center">
                                     <h3>Bienvenue sur TravelMemories, l'outil parfait des globe-trotteurs !</h3>
@@ -238,13 +242,11 @@ class Connexion extends Component {
                                     <h4>Inscrivez-vous, cela ne prend que quelques secondes et c'est <b>gratuit</b> !</h4>
                                 </div>
                             </div>
-
-
                         </div>
-                        <div className="formContainer">
-                        <Form className="form-body">
-                            <Form.Row className="firstRow">
-                                <Form.Group className="col-md-4 offset-md-2" as={Col}>
+                        <div className="">
+                        <Form className="">
+                            <Form.Row className="">
+                                <Form.Group className="" as={Col}>
                                     <Form.Label>Nom</Form.Label>
                                     <div className="input-group mb-3">
                                         <Form.Control 
@@ -263,7 +265,7 @@ class Connexion extends Component {
                                     </div>
                                 </Form.Group>
 
-                                <Form.Group className="col-md-4" as={Col}>
+                                <Form.Group className="" as={Col}>
                                     <Form.Label>Prénom</Form.Label>
                                     <div className="input-group mb-3">
                                         <Form.Control className="text-center" name="firstName" value={this.state.firstName} type="text" placeholder="Prénom" onChange={(evt) => this.handleChange(evt)} />
@@ -278,7 +280,7 @@ class Connexion extends Component {
                             </Form.Row>
 
                             <Form.Row>
-                                <Form.Group className="col-md-4 offset-md-2" as={Col}>
+                                <Form.Group className="" as={Col}>
                                     <Form.Label>Adresse e-mail</Form.Label>
                                     <div className="input-group mb-3">
                                         <Form.Control className="text-center" name="email" value={this.state.email} type="email" placeholder="Adresse e-mail" onChange={(evt) => this.handleChange(evt)} />
@@ -291,7 +293,7 @@ class Connexion extends Component {
                                     </div>
                                 </Form.Group>
 
-                                <Form.Group className="col-md-4" as={Col}>
+                                <Form.Group className="" as={Col}>
                                     <Form.Label>{this.state.emailConfirmLabel}</Form.Label>
                                     <div hidden={this.state.emailDisabled} className="input-group mb-3">
                                         <Form.Control className="text-center" name="emailConfirm" value={this.state.emailConfirm} type="email" placeholder="Confirmez l'adresse e-mail" onChange={(evt) => this.handleChange(evt)} />
@@ -303,13 +305,13 @@ class Connexion extends Component {
                                         </div>
                                     </div>
                                 </Form.Group>
-                                <div className="col-md-12 errMess">
-                                    {this.state.emailMessage}
-                                </div>
                             </Form.Row>
+                            <div className="errMess">
+                                {this.state.emailMessage}
+                            </div>
 
                             <Form.Row>
-                                <Form.Group className="col-md-4 offset-md-2" as={Col}>
+                                <Form.Group className="" as={Col}>
                                     <Form.Label>Mot de passe</Form.Label>
                                     <div className="input-group mb-3">
                                         <Form.Control className="text-center" name="password" type="password" value={this.state.password} placeholder="Choisissez un nouveau mot de passe" onChange={(evt) => this.handleChange(evt)} />
@@ -322,7 +324,7 @@ class Connexion extends Component {
                                     </div>
                                 </Form.Group>
 
-                                <Form.Group className="col-md-4" as={Col}>
+                                <Form.Group className="" as={Col}>
                                     <Form.Label>{this.state.passwordConfirmLabel}</Form.Label>
                                     <div hidden={this.state.pwdDisabled} className="input-group mb-3">
                                         <Form.Control value={this.state.passwordConfirm} className="text-center" name="passwordConfirm" type="password" placeholder="Confirmez le mot de passe" onChange={(evt) => this.handleChange(evt)} />
@@ -334,20 +336,21 @@ class Connexion extends Component {
                                         </div>
                                     </div>
                                 </Form.Group>
-                                <div className="col-md-12 errMess">
-                                    {this.state.passwordMessage}
-                                </div>
                             </Form.Row>
+                            <div className="errMess">
+                                {this.state.passwordMessage}
+                            </div>
 
                             <Form.Row>
-                                <div className="col-md-12 text-center form-label birthdateLabel">Date de naissance</div>
-                                <Form.Group className="col-md-2 offset-md-3">
+                                <div className="text-center col-md-12 form-label birthdateLabel">Date de naissance</div>
+                                <div className="birthGroup row">
+                                <Form.Group className="birthdayGroup">
                                     <select className="form-control" name="birthDay" onChange={(evt) => this.handleChange(evt)}>
                                         <option value="">Jour</option>
                                         {this.daysOption()}
                                     </select>
                                 </Form.Group>
-                                <Form.Group className="col-md-2">
+                                <Form.Group className="birthMonthGroup">
                                     <select name="birthMonth" className="form-control" onChange={(evt) => this.handleChange(evt)}>
                                         <option value="">Mois</option>
                                         <option value="01">Janvier</option>
@@ -364,17 +367,18 @@ class Connexion extends Component {
                                         <option value="12">Décembre</option>
                                     </select>
                                 </Form.Group>
-                                <Form.Group className="col-md-2">
+                                <Form.Group className="">
                                     <select className="form-control" name="birthYear" onChange={(evt) => this.handleChange(evt)}>
                                         <option value="">Année</option>
                                         {this.yearsOption()}
                                     </select>
                                 </Form.Group>
+                                </div>
                                 <small id="ageHelp" className="col-md-6 offset-md-3 text-muted">Votre âge permet de vous proposer un contenu adapté.</small>
                             </Form.Row>
 
-                            <Form.Row>
-                                <div className="col-md-12 text-center form-label">Sexe</div>
+                            <Form.Row className="text-center">
+                                <div className="text-center sexLabel form-label">Sexe</div>
                                 <Form.Group className="col-md-12">
                                     <Form.Check
                                         inline
@@ -406,21 +410,15 @@ class Connexion extends Component {
                                 onChange={this.handleCaptchaResponseChange}
                             />
 
-                            <div style={this.state.generalMessageStyle} className="col-md-12 generalMess">
+                            <div style={this.state.generalMessageStyle} className="generalMess">
                                 {this.state.generalMessage}
                             </div>
-                            <Button disabled={this.state.buttonDisabled} className="col-md-2 registerButton" variant={this.state.buttonVariance} onClick={() => this.handleClick()}>
+                            <Button disabled={this.state.buttonDisabled} className="registerButton" variant={this.state.buttonVariance} onClick={() => this.handleClick()}>
                                 {this.state.buttonValue}
                             </Button>
                     </Form>
                         </div>
                     </div>
-                    <div className="leftFooter">
-
-                    </div>
-                </div>
-                <div className="rightContainer">
-
                 </div>
             </div >
         )
