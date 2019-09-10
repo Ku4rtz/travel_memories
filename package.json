@@ -19,7 +19,9 @@
     "react-cookie-consent": "^2.3.1",
     "react-dom": "^16.8.6",
     "react-file-base64": "^1.0.3",
+    "react-file-reader": "^1.1.4",
     "react-google-recaptcha": "^1.0.5",
+    "react-grid-gallery": "^0.5.5",
     "react-images": "^1.0.0",
     "react-loader-spinner": "^2.3.0",
     "react-photo-gallery": "^8.0.0",
@@ -32,7 +34,8 @@
     "react-simple-maps": "^0.12.1",
     "react-themeable": "^1.1.0",
     "react-tooltip": "^3.10.0",
-    "react-transition-group": "^1.2.1"
+    "react-transition-group": "^1.2.1",
+    "styled-components": "^4.3.2"
   },
   "scripts": {
     "start": "react-scripts start",

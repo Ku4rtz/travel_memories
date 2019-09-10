@@ -1,73 +1,78 @@
 .profilPicture {
-    width: 60px;
-    height: 60px;
-    border-radius: 60px;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
 }
 
 .profilName {
-    font-size: 18px;
-    color:rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  color:rgba(255, 255, 255, 0.8);
+  padding-right: 20px;
+}
+
+.profile{
+  background-color: #fafafa;
+}
+
+.profil-image{
+  width: 150px;
+  height: 150px;
+  border-radius: 70%;
+  margin-left: 10%;
+}
+
+.userInfos{
+  font-family: 'Vidaloka', serif;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.userStatus{
+   font-style: italic;
+   color: grey;
+}
+
+.worldmap{
+    width: 50%;
     padding-right: 20px;
 }
 
-  .profile{
-    background-color: #fafafa;
-  }
-
-  .profil-image{
-    width: 150px;
-    height: 150px;
-    border-radius: 70%;
-    margin-left: 10%;
-  }
-
-  .userInfos{
-    font-family: 'Vidaloka', serif;
-    font-size: 3em;
-    font-weight: bold;
-  }
-
-  .userStatus{
-     font-style: italic;
-     color: grey;
-  }
-
-  .worldmap{
-      width: 50%;
-      padding-right: 20px;
-  }
-
-  .genBanner{
-      background-size: cover;
-  }
-
-  .photos{
-      width: 50%;
-      height: 980px;
-      overflow-y: scroll;
-      direction: rtl;
-  }
-
-  .profileContent{
-    padding-top: 10px;
-  }
-
-  .photoList{
-    color: white;
-    cursor: pointer;
-    width: 33%;
-    padding: 2px;
-    height: 20%;
-  }
-
-  .profileHeader{
+.genBanner{
+    background-size: cover;
     background-color: white;
-    padding-bottom: 10px;
-    -webkit-box-shadow: 0 3px 6px -6px grey;
-	   -moz-box-shadow: 0 3px 6px -6px grey;
-	        box-shadow: 0 3px 6px -6px grey;
-  }
+  padding-bottom: 10px;
+  -webkit-box-shadow: 0 3px 6px -6px grey;
+   -moz-box-shadow: 0 3px 6px -6px grey;
+        box-shadow: 0 3px 6px -6px grey;
+}
 
-  .header{
-    padding-top: 10px;
-  }
+.photos{
+    width: 50%;
+    height: 780px;
+    overflow-y: scroll;
+    direction: rtl;
+}
+
+.profileContent{
+  padding-top: 10px;
+}
+
+.photoList{
+  color: white;
+  cursor: pointer;
+  width: 33%;
+  padding: 2px;
+  height: 20%;
+}
+
+.profileHeader{
+  background-color: white;
+  padding-bottom: 10px;
+  -webkit-box-shadow: 0 3px 6px -6px grey;
+   -moz-box-shadow: 0 3px 6px -6px grey;
+        box-shadow: 0 3px 6px -6px grey;
+}
+
+.header{
+  padding-top: 10px;
+}

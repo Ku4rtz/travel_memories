@@ -114,14 +114,14 @@ class Profile extends Component {
         return (
             <div className="profile">
                 {this.state.redirection}
-                <div class="genBanner">
+                <div className="genBanner">
                 <div className="profileHeader">
                     <Header openModal={this.getDataFromSearchBar} />
                 </div>
                 <ModalCountry ref={this._child} modalTitle={this.state.modalTitle} alpha3={this.state.alpha3} />
                 <div className="header">
-                    <div className="banner col-md-12 row">
-                        <img className="col-md-4" height="250px" width="250px" className="profil-image" src={process.env.PUBLIC_URL + "img/PROFILPICTURE.jpg"} />                   
+                    <div className="col-md-12 row">
+                        <img className="col-md-4" className="profil-image" src={process.env.PUBLIC_URL + "img/PROFILPICTURE.jpg"} />                   
                         <div className="col-md-8 userInfos text-center">
                             {this.state.userFirstName} {this.state.userName}
                             <div className="userStatus">Globe Trotter</div>
@@ -132,7 +132,7 @@ class Profile extends Component {
 
                 <div className="profileContent row">
                     <div className="photos">
-                        {photos.map((item, index) => <Photo src={item.photo} openLightbox={() => {console.log(index); this.setState({
+                        {photos.map((item, index) => <Photo key={Math.random()} src={item.photo} openLightbox={() => {console.log(index); this.setState({
                             activePhotoIndex: index
                         }, this.setState({
                             galleryIsVisible: true

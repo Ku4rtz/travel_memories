@@ -7,7 +7,6 @@ class Gallery extends Component {
   }
 
   render () {
-    console.log(this.props.activePhotoIndex)
     return (
       <div>
       <ReactBnbGallery

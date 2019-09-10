@@ -57,7 +57,8 @@ class ModalCountry extends React.Component{
         redirection: <Redirect exact from="/" to={{
           pathname: '/photos',
           state: { 
-            lookedCountry: this.props.alpha3
+            lookedCountry: this.props.modalTitle,
+            lookedAlpha3: this.props.alpha3
           }
       }} />
     })
