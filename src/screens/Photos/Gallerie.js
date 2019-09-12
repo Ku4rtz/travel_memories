@@ -15,11 +15,10 @@ class Gallery extends Component {
         onClose={this.props.close}
         activePhotoIndex={this.props.activePhotoIndex}
         opacity={0.80}
-        //  phrases={
-        //    noPhotosProvided= "Aucune photo",
-        //    showPhotoList= "Montrer la liste",
-        //    hidePhotoList= "Cacher la liste"
-        //  }
+        // phrases= {
+        //   showPhotoList= "Montrer la liste",
+        //   hidePhotoList= "Cacher la liste"
+        // }
       />
       </div>
     )

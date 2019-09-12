@@ -51,3 +51,7 @@ input{
 .btnValid{
     margin-right: 1%;
 }
+
+.input-file{
+    display: none;
+}

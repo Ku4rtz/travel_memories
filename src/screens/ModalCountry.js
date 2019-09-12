@@ -73,19 +73,26 @@ class ModalCountry extends React.Component{
       'alpha3': this.props.alpha3
     }),
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      "Authorization": localStorage.getItem("xsrfToken")
     }
   })
   .then(response => response.json())
   .then(body => {
-    this.close();
-    this.props.countries.objects.units.geometries.forEach(function(country){
-      if(country.id === self.props.alpha3)
-      {
-        country.properties.visited = true;
-      }
-    })
-    this.props.refreshMap(this.props.countries);
+    if(!body.success){
+      window.location.reload();
+    }
+    else
+    {
+      this.close();
+      this.props.countries.objects.units.geometries.forEach(function(country){
+        if(country.id === self.props.alpha3)
+        {
+          country.properties.visited = true;
+        }
+      })
+      this.props.refreshMap(this.props.countries);
+    }
   })
   }
 

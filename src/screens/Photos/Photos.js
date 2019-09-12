@@ -2,10 +2,9 @@ import React, { Component, useState, useCallback } from "react"
 import Header from '../Header'
 import ModalCountry from '../ModalCountry'
 import Photo from './Photo'
-import FileBase64 from 'react-file-base64';
 import Gallerie from './Gallerie';
 import ReactFileReader from 'react-file-reader'
-import { isArray } from "util";
+import Config from '../../Config'
 import './styles.css'
 
 class Photos extends Component {
@@ -21,7 +20,7 @@ class Photos extends Component {
             countryAlpha3: this.props.location.state ? this.props.location.state.lookedAlpha3 : "",
             photos: [],
             showAddPhotos: "d-none",
-            photosToAdd: [],
+            photosToAdd: []
         }
 
         this.getDataFromSearchBar = this.getDataFromSearchBar.bind(this);
@@ -40,35 +39,79 @@ class Photos extends Component {
     }
 
     handleFiles(files){
-        var photosArray = this.state.photosToAdd;
-        files.base64.forEach(function(base64){
-             photosArray.push({
-                photo: base64
+        let photosStamp = [];
+        files.base64.forEach(function(file){
+            photosStamp.push({
+                photo: file,
+                base64: file,
+                title: "Titre",
+                description: "Description"
             })
         })
         this.setState({
-            photosToAdd: photosArray
-        })
+            photosToAdd: photosStamp
+        }, () => console.log(this.state.photosToAdd))
 
-        if(this.state.photosToAdd.length != 0)
-        {
-            this.setState({
-                showAddPhotos: "d-block"
-            })
-        }
+        this.setState({
+            showAddPhotos: 'd-block'
+        })
     }
 
+    componentDidMount(){
+        var photosArray = this.state.photos;
+        let self = this;
+        fetch(Config.apiUrl + 'photos_thisUser/' + this.state.countryAlpha3, {
+            method: 'GET',
+            credentials: 'include',
+            headers: {
+              'Content-Type': 'application/json',
+              "Authorization": localStorage.getItem("xsrfToken")
+            }
+          })
+          .then(response => response.json())
+          .then(body => {
+              body.forEach(function(data){
+                  self.setState({
+                      photos: self.state.photos.concat({
+                          photo: data.base64,
+                          caption: data.title,
+                          subcaption: data.description
+                      })
+                  })
+              })
+          })
+          .catch(err => {
+              console.log(err)
+          })
+    }
     
     storePhotos(){
-        console.log("on enregistre les photos avec l'API.")
-        this.setState({
-            showAddPhotos: "d-none",
-            photosToAdd: []
-        })
+        fetch(Config.apiUrl + 'addPhotos', {
+            method: 'PUT',
+            credentials: 'include',
+            body: JSON.stringify({
+              'photos': this.state.photosToAdd,
+              'alpha3': this.state.countryAlpha3
+            }),
+            headers: {
+              'Content-Type': 'application/json',
+              "Authorization": localStorage.getItem("xsrfToken")
+            }
+          })
+          .then(response => response.json())
+          .then(body => {
+            this.setState({
+                photos: this.state.photos.concat(this.state.photosToAdd),
+                showAddPhotos: "d-none",
+                photosToAdd: []
+            })
+          })
+          .catch(err => {
+              console.log(err)
+          })
     }
 
     cancelAddPhotos(){
-        console.log("On annule l'enregistrement")
         this.setState({
             showAddPhotos: "d-none",
             photosToAdd: []
@@ -92,12 +135,12 @@ class Photos extends Component {
                         </div>
                     </div>
                 </div>
-            <div className="photosContent">
-                <ReactFileReader handleFiles={this.handleFiles} multipleFiles={true} base64={true} fileTypes={[".jpg", ".tif", ".tiff", ".jpeg", ".gif", ".png", ".bmp"]}>
-                    <div class="text-center">
-                        <button className='btn btn-info form-control btnAdd col-md-2'>Ajouter des photos</button>
-                    </div>
-                </ReactFileReader>
+            <div className="photosContent">               
+                <div className="text-center">
+                    <ReactFileReader fileTypes={[".png", ".jpg", ".jpeg", ".bmp"]} base64={true} multipleFiles={true} handleFiles={this.handleFiles}>
+                        <button className="btn btn-info btnAdd">Ajouter des photos</button>
+                    </ReactFileReader>
+                </div>
 
                 <div className={"photosToAdd row text-center " + (this.state.showAddPhotos)}>
                     <div className="photosFull photosToAddWithButton">
